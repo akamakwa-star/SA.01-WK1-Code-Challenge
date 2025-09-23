@@ -1,18 +1,17 @@
-let speed = (prompt('Enter vehicle speed'));
+let enterSpeed = Number(prompt("Enter the speed in km/h"));
 
-speed(speed);
+if (Number.isNaN(enterSpeed)) {
+    console.log("Invalid input");
+} else if (enterSpeed <= 70) {
+    console.log("OK");
+} else {
+    let excess = enterSpeed - 70;
+    let points = Math.floor(excess / 5);
 
-function speeder(speed){
-    if (speed <=70){
-        console.log("ok")
-
-    }else {
-        let demPoints = (speed-70)/5
-
-        if (demPoint>12){
-            console.log("License suspended")
-        }else {
-            console.log("Point:" + demPoints)
-        }
+    if (points >= 12) {
+        console.log("License suspended");
+    } else {
+        console.log("Points: " + points);
     }
 }
+
